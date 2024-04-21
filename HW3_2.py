@@ -33,12 +33,20 @@ print("Ваші лотерейні числа:", lottery_numbers)
 Кожен раз при виклику функції ви отримуватимете різний набір чисел.
 """
 import random
-try:
-    min = int(input("\nEnter the minimum integer (1-1000):\n"))
-    max = int(input("Enter the maximum integer (1-1000):\n"))
-    quantity = int(input("Enter the number of numbers to select:\n"))
 
-    def get_numbers_ticket(min, max, quantity):
+# min = int(input("\nEnter the minimum integer (1-1000):\n"))
+# max = int(input("Enter the maximum integer (1-1000):\n"))
+# quantity = int(input("Enter the number of numbers to select:\n"))
+min = input("\nEnter the minimum integer (1-1000):\n")
+max = input("Enter the maximum integer (1-1000):\n")
+quantity = input("Enter the number of numbers to select:\n")
+
+def get_numbers_ticket(min, max, quantity):
+    try:
+        min = int(min)
+        max = int(max)
+        quantity = int(quantity)
+         
         list_of_nambers = []                                                    #creating a new list min-max 
         
         while min <= max:                                                       #adding value: min-max
@@ -47,9 +55,11 @@ try:
 
         selected_list = (random.sample(list_of_nambers, quantity))              #creating search list 
         selected_list.sort()                                                    #sorting search list 
+        
         return selected_list
+    
+    except ValueError:                                                              #if exception
+        return 'The search parameters are incorrect. Try again.\n'
 
-    print(get_numbers_ticket(min, max, quantity))
+print(get_numbers_ticket(min, max, quantity))
 
-except ValueError:                                                              #if exception
-    print('\nThe search parameters are incorrect. Try again.\n')
