@@ -32,3 +32,24 @@ print("Ваші лотерейні числа:", lottery_numbers)
 В результаті ви отримаєте список з 6 випадковими, унікальними та відсортованими числами, наприклад, [4, 15, 23, 28, 37, 45]. 
 Кожен раз при виклику функції ви отримуватимете різний набір чисел.
 """
+import random
+try:
+    min = int(input("\nEnter the minimum integer (1-1000):\n"))
+    max = int(input("Enter the maximum integer (1-1000):\n"))
+    quantity = int(input("Enter the number of numbers to select:\n"))
+
+    def get_numbers_ticket(min, max, quantity):
+        list_of_nambers = []                                                    #creating a new list min-max 
+        
+        while min <= max:                                                       #adding value: min-max
+            list_of_nambers.append(min)
+            min += 1
+
+        selected_list = (random.sample(list_of_nambers, quantity))              #creating search list 
+        selected_list.sort()                                                    #sorting search list 
+        return selected_list
+
+    print(get_numbers_ticket(min, max, quantity))
+
+except ValueError:                                                              #if exception
+    print('\nThe search parameters are incorrect. Try again.\n')
