@@ -34,9 +34,6 @@ print("Ваші лотерейні числа:", lottery_numbers)
 """
 import random
 
-# min = int(input("\nEnter the minimum integer (1-1000):\n"))
-# max = int(input("Enter the maximum integer (1-1000):\n"))
-# quantity = int(input("Enter the number of numbers to select:\n"))
 min = input("\nEnter the minimum integer (1-1000):\n")
 max = input("Enter the maximum integer (1-1000):\n")
 quantity = input("Enter the number of numbers to select:\n")
