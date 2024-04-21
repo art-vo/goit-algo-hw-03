@@ -29,7 +29,9 @@ def get_days_from_today(date) -> int:
     try:    
         str_to_date = datetime.strptime(date, "%Y-%m-%d").date()                # str --> date
         date_now = datetime.today().date()                                      # get today date
+        
         return (str_to_date - date_now).days                                    # return different
+    
     except ValueError:                                                          # If exception
         return 'The desired year does not match the format. Try again.\n'
     
