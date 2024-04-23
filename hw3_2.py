@@ -42,7 +42,7 @@ def get_numbers_ticket(min, max, quantity):
 
     list_of_nambers = []                                                    #creating a new list min-max 
 
-    if min >= 1 and max <= 1000 and min < max and (max-min) > quantity :    #checking values
+    if min >= 1 and max <= 1000 and min < max and (max-min) >= quantity :    #checking values
 
         while min <= max:                                                   #adding value: min-max
             list_of_nambers.append(min)
